@@ -41,11 +41,10 @@ jobs:
           channel: master
       - run: flutter config --enable-macos-desktop
       - run: flutter doctor -v
-
-      - run: flutter pub get -v
-
+      - name: Checkout code
+        uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
+      - run: flutter pub get
       - run: flutter build ${{ matrix.target }}
-
       - name: Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
         with:
