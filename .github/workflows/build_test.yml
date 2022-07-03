@@ -21,9 +21,9 @@ jobs:
       matrix:
         target: [iOS, Android]
         include:
-          - os: ubuntu-latest
+          - os: macos-latest
             target: iOS
-            build_target: ios
+            build_target: ipa --export-method development
             build_path: build/ios/ipa/flutter_cicd.ipa.
             secret_app_id: IOS_APP_ID
           - os: ubuntu-latest
