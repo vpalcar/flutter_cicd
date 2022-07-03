@@ -13,7 +13,7 @@ on:
     branches:
     - main
   workflow_dispatch:
-  
+
 # Declare default permissions as read only.
 permissions: read-all
 
@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ["apk --debug", "ios --no-codesign", macos, web]
+        target: ["apk", "ios --no-codesign"]
     steps:
       # Set up Flutter.
       - name: Clone Flutter repository with master channel
