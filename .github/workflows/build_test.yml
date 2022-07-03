@@ -32,7 +32,6 @@ jobs:
             build_path: build/app/outputs/flutter-apk/app-release.apk
             secret_app_id: ANDROID_APP_ID
     steps:
-
       # Set up Flutter.
       - name: Clone Flutter repository with master channel
         uses: subosito/flutter-action@d8687e6979e8ef66d2b2970e2c92c1d8e801d7bf
@@ -56,6 +55,21 @@ jobs:
       - run: make format
       - run: flutter build ${{ matrix.build_target }}
 
+  distribute:
+    name: Distribute ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [iOS, Android]
+        include:
+          - target: iOS
+            build_path: build/ios/iphoneos/Runner.app
+            secret_app_id: IOS_APP_ID
+          - target: Android
+            build_path: build/app/outputs/flutter-apk/app-release.apk
+            secret_app_id: ANDROID_APP_ID
+    steps:
       # Distribute app
       - name: Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
