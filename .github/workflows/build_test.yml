@@ -24,14 +24,12 @@ jobs:
           - os: macos-latest
             target: iOS
             build_target: ios --no-codesign
-            build_path: build/ios/iphoneos
-            asset_extension: .app
+            build_path: build/ios/iphoneos/Runner.app
             appId: com.example.flutterCicd
           - os: ubuntu-latest
             target: Android
             build_target: apk
-            build_path: build/app/outputs/flutter-apk
-            asset_extension: .apk
+            build_path: build/app/outputs/flutter-apk/app-release.apk
             appId: com.example.flutter_cicd
     steps:
       # Set up Flutter.
@@ -51,4 +49,4 @@ jobs:
           appId: ${{ matrix.appId }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: beta-testers
-          file: app/build/outputs/apk/release/app-release-unsigned.apk
+          file: ${{ matrix.build_path }}
