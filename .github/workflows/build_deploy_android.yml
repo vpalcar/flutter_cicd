@@ -1,4 +1,4 @@
-name: Build and test
+name: Build and deploy Android
 
 on:
   pull_request:
@@ -14,23 +14,8 @@ permissions: read-all
 
 jobs:
   build:
-    name: Build ${{ matrix.target }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        target: [iOS, Android]
-        include:
-          - os: macos-latest
-            target: iOS
-            build_target: ipa --export-method development
-            build_path: build/ios/ipa/flutter_cicd.ipa.
-            secret_app_id: IOS_APP_ID
-          - os: ubuntu-latest
-            target: Android
-            build_target: apk
-            build_path: build/app/outputs/flutter-apk/app-release.apk
-            secret_app_id: ANDROID_APP_ID
+    name: Build Android
+    runs-on: ubuntu-latest
     steps:
 
       # Set up Flutter.
@@ -54,13 +39,13 @@ jobs:
       - run: make get
       - run: make lint
       - run: make format
-      - run: flutter build ${{ matrix.build_target }}
+      - run: flutter build apk
 
       # Distribute app
       - name: Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          appId: ${{ secrets[matrix.secret_app_id] }}
+          appId: ${{ secrets.ANDROID_APP_ID }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: beta-testers
-          file: ${{ matrix.build_path }}
+          file: build/app/outputs/flutter-apk/app-release.apk
