@@ -39,6 +39,10 @@ jobs:
           channel: master
       - run: flutter config --enable-macos-desktop
       - run: flutter doctor -v
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 15
       - name: Checkout code
         uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
       - run: flutter pub get
