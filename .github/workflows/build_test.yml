@@ -7,7 +7,11 @@ name: Build and test
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches:
+    - main
+  push:
+    branches:
+    - main
   workflow_dispatch:
 
 jobs:
