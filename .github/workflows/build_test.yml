@@ -25,29 +25,37 @@ jobs:
             target: iOS
             build_target: ios --no-codesign
             build_path: build/ios/iphoneos/Runner.app
-            appId: com.example.flutterCicd
+            appId: ${{ secrets.IOS_APP_ID }}
           - os: ubuntu-latest
             target: Android
             build_target: apk
             build_path: build/app/outputs/flutter-apk/app-release.apk
-            appId: com.example.flutter_cicd
+            appId: ${{ secrets.ANDROID_APP_ID }}
     steps:
+
       # Set up Flutter.
       - name: Clone Flutter repository with master channel
         uses: subosito/flutter-action@d8687e6979e8ef66d2b2970e2c92c1d8e801d7bf
         with:
           channel: master
       - run: flutter doctor -v
+
       # Set up java
       - name: set up JDK 1.8
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      # Flutter build
+
+      # Checkout code
       - name: Checkout code
-        uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
-      - run: flutter pub get
+        uses: actions/checkout@v2
+
+      # Flutter get packages, analyse, format, build
+      - run: make get
+      - run: make lint
+      - run: make format
       - run: flutter build ${{ matrix.build_target }}
+
       # Distribute app
       - name: Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
