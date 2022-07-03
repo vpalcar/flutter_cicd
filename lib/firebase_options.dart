@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '562796003130',
     projectId: 'cicd-example-4d8df',
     storageBucket: 'cicd-example-4d8df.appspot.com',
-    iosClientId: '562796003130-lq6ca0p4mmg2nosncc0231h0ldop9tn2.apps.googleusercontent.com',
+    iosClientId:
+        '562796003130-lq6ca0p4mmg2nosncc0231h0ldop9tn2.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCicd',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '562796003130',
     projectId: 'cicd-example-4d8df',
     storageBucket: 'cicd-example-4d8df.appspot.com',
-    iosClientId: '562796003130-lq6ca0p4mmg2nosncc0231h0ldop9tn2.apps.googleusercontent.com',
+    iosClientId:
+        '562796003130-lq6ca0p4mmg2nosncc0231h0ldop9tn2.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCicd',
   );
 }
