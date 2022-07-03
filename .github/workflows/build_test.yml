@@ -23,7 +23,7 @@ jobs:
         include:
           - os: ubuntu-latest
             target: iOS
-            build_target: ipa --export-method development
+            build_target: ios
             build_path: build/ios/ipa/flutter_cicd.ipa.
             secret_app_id: IOS_APP_ID
           - os: ubuntu-latest
