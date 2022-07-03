@@ -25,12 +25,12 @@ jobs:
             target: iOS
             build_target: ios --no-codesign
             build_path: build/ios/iphoneos/Runner.app
-            appId: ${{ secrets.IOS_APP_ID }}
+            secret_app_id: IOS_APP_ID
           - os: ubuntu-latest
             target: Android
             build_target: apk
             build_path: build/app/outputs/flutter-apk/app-release.apk
-            appId: ${{ secrets.ANDROID_APP_ID }}
+            secret_app_id: ANDROID_APP_ID
     steps:
 
       # Set up Flutter.
@@ -60,7 +60,7 @@ jobs:
       - name: Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          appId: ${{ matrix.appId }}
+          appId: ${{ secrets[matrix.secret_app_id] }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: beta-testers
           file: ${{ matrix.build_path }}
