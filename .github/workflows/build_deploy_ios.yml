@@ -17,14 +17,34 @@ jobs:
     runs-on: macos-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
+      # Set up Flutter.
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@v2
+        with:
+          channel: master
+      - run: flutter doctor -v
+
+      # Set up java
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Flutter get packages, analyse, format
+      - run: make get
+      - run: make lint
+      - run: make format
+
+      # Build and deploy with fastlane
       - name: Deploy iOS Beta to TestFlight via Fastlane
-        run: |
-          cd ios
         uses: maierj/fastlane-action@v1.4.0
         with:
           lane: closed_beta
+          subdirectory: ios
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
