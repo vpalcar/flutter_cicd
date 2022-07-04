@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000429">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: delete_keychain" time="0.022201">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: create_keychain" time="0.103692">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: app_store_connect_api_key" time="0.005546">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: increment_build_number" time="1.290452">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: cocoapods" time="3.57975">
+        
+          <failure message="/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:229:in `chdir&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:229:in `execute_action&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing&apos;&#10;Fastfile:49:in `block (2 levels) in parsing_binding&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/lane.rb:33:in `call&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/lane_manager.rb:47:in `cruise_lane&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/commands_generator.rb:354:in `run&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/bin/fastlane:25:in `load&apos;&#10;/usr/local/Cellar/fastlane/2.207.0/libexec/bin/fastlane:25:in `&lt;main&gt;&apos;&#10;&#10;ERROR: Failed to build gem native extension.&#10;&#10;    current directory: /usr/local/Cellar/fastlane/2.207.0/libexec/gems/ffi-1.15.5/ext/ffi_c&#10;/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220704-26629-r27ix6.rb extconf.rb&#10;*** extconf.rb failed ***&#10;Could not create Makefile due to some reason, probably lack of necessary&#10;libraries and/or headers.  Check the mkmf.log file for more details.  You may&#10;need configuration options.&#10;&#10;Provided configuration options:&#10;	--with-opt-dir&#10;	--with-opt-include&#10;	--without-opt-include=${opt-dir}/include&#10;	--with-opt-lib&#10;	--without-opt-lib=${opt-dir}/lib&#10;	--with-make-prog&#10;	--without-make-prog&#10;	--srcdir=.&#10;	--curdir&#10;	--ruby=/usr/local/Cellar/ruby/3.1.2/bin/$(RUBY_BASE_NAME)&#10;	--with-ffi_c-dir&#10;	--without-ffi_c-dir&#10;	--with-ffi_c-include&#10;	--without-ffi_c-include=${ffi_c-dir}/include&#10;	--with-ffi_c-lib&#10;	--without-ffi_c-lib=${ffi_c-dir}/lib&#10;	--enable-system-libffi&#10;	--disable-system-libffi&#10;	--with-libffi-dir&#10;	--without-libffi-dir&#10;	--with-libffi-include&#10;	--without-libffi-include=${libffi-dir}/include&#10;	--with-libffi-lib&#10;	--without-libffi-lib=${libffi-dir}/lib&#10;	--with-libffi-config&#10;	--without-libffi-config&#10;	--with-pkg-config&#10;	--without-pkg-config&#10;/usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0/mkmf.rb:498:in `try_do&apos;: The compiler failed to generate an executable file. (RuntimeError)&#10;You have to install development tools first.&#10;	from /usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0/mkmf.rb:591:in `try_link0&apos;&#10;	from /usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0/mkmf.rb:609:in `try_link&apos;&#10;	from /usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0/mkmf.rb:711:in `try_ldflags&apos;&#10;	from /usr/local/Cellar/ruby/3.1.2/lib/ruby/3.1.0/mkmf.rb:1895:in `pkg_config&apos;&#10;	from extconf.rb:9:in `system-libffi_usable?&apos;&#10;	from extconf.rb:42:in `&lt;main&gt;&apos;&#10;&#10;To see why this extension failed to compile, please check the mkmf.log which can be found here:&#10;&#10;  /usr/local/Cellar/fastlane/2.207.0/libexec/extensions/x86_64-darwin-21/3.1.0/ffi-1.15.5/mkmf.log&#10;&#10;extconf failed, exit code 1&#10;&#10;Gem files will remain installed in /usr/local/Cellar/fastlane/2.207.0/libexec/gems/ffi-1.15.5 for inspection.&#10;Results logged to /usr/local/Cellar/fastlane/2.207.0/libexec/extensions/x86_64-darwin-21/3.1.0/ffi-1.15.5/gem_make.out&#10;" />
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

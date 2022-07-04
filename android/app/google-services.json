@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:562796003130:android:fc283cbb92153287629a03",
+        "mobilesdk_app_id": "1:562796003130:android:697c268eaaa79a1b629a03",
         "android_client_info": {
-          "package_name": "com.example.flutter_cicd"
+          "package_name": "com.vidpalcar.flutterCICD"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "562796003130-p0hge6e32cuva463d3en4r6fd2e6af9t.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "562796003130-lq6ca0p4mmg2nosncc0231h0ldop9tn2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterCicd"
+              }
             }
           ]
         }

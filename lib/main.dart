@@ -1,12 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cicd/firebase_options.dart';
+import 'package:flutter_udid/flutter_udid.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  String udid = await FlutterUdid.consistentUdid;
+  print(udid);
   runApp(const MyApp());
 }
 

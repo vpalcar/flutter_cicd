@@ -1,4 +1,4 @@
-package com.example.flutter_cicd
+package com.vidpalcar.flutterCICD
 
 import io.flutter.embedding.android.FlutterActivity
 
