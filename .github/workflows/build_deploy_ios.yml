@@ -19,12 +19,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-
-      - name: Go to ios folder
+      - name: Deploy iOS Beta to TestFlight via Fastlane
         run: |
           cd ios
-         
-      - name: Deploy iOS Beta to TestFlight via Fastlane
         uses: maierj/fastlane-action@v1.4.0
         with:
           lane: closed_beta
