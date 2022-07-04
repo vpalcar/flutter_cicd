@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '562796003130',
     projectId: 'cicd-example-4d8df',
     storageBucket: 'cicd-example-4d8df.appspot.com',
-    iosClientId: '562796003130-7g69j4ss3ka0oh0ebr0bscb4r412343c.apps.googleusercontent.com',
+    iosClientId:
+        '562796003130-7g69j4ss3ka0oh0ebr0bscb4r412343c.apps.googleusercontent.com',
     iosBundleId: 'com.vidpalcar.flutterCICD',
   );
 }
