@@ -1,12 +1,15 @@
-name: CD
+name: Build iOS
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions a tab
+    branches:
+    - main
+  push:
+    branches:
+    - main
   workflow_dispatch:
+
+# Declare default permissions as read only.
+permissions: read-all
 
 jobs:
   deploy:
@@ -17,6 +20,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - name: Go to ios folder
+        run: |
+          cd ios
+         
       - name: Deploy iOS Beta to TestFlight via Fastlane
         uses: maierj/fastlane-action@v1.4.0
         with:
